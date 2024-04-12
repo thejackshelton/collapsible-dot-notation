@@ -1,12 +1,6 @@
 import { component$, useStyles$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import {
-  Select,
-  SelectTrigger,
-  SelectValue,
-  SelectListbox,
-  SelectOption,
-} from "@qwik-ui/headless";
+import { Collapsible } from "~/components";
 import styles from "~/components/select/select-example.css?inline";
 
 export default component$(() => {
@@ -14,15 +8,10 @@ export default component$(() => {
 
   return (
     <>
-      <Select class="select">
-        <SelectTrigger class="select-trigger">
-          <SelectValue placeholder="Select an option" />
-        </SelectTrigger>
-        <SelectListbox class="select-listbox">
-          <SelectOption>Option 1</SelectOption>
-          <SelectOption>Option 2</SelectOption>
-        </SelectListbox>
-      </Select>
+      <Collapsible.Root>
+        <Collapsible.Trigger>Collapsible Trigger</Collapsible.Trigger>
+        <Collapsible.Content>Content</Collapsible.Content>
+      </Collapsible.Root>
     </>
   );
 });
